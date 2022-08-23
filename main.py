@@ -2,7 +2,7 @@ import telebot
 from telebot import types
 from generator.terrain import TerrainTypes
 from generator.hex_result import Hex
-from .config import SECRET_TOKEN
+from config import SECRET_TOKEN
 
 bot = telebot.TeleBot(SECRET_TOKEN)
 
