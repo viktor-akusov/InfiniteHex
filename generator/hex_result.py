@@ -14,10 +14,12 @@ class Hex:
 Местность: {}
 Примеры: {}
 Обитаемость: {}
+Кол-во населения: {} чел.
         """
         place = None
         examples = None
         inhabitation = "Нет"
+        people_count = "0"
         if (self.terrain == TerrainTypes.Plain):
             place = "Равнина"
             examples = "Тундра, степь, саванна, прерии, луга и т.д."
@@ -60,16 +62,22 @@ class Hex:
 
         if(self.inhabitation == InhabitationTypes.SingleDwelling):
             inhabitation = "Одинокое жилище"
+            people_count = "1 - 12"
         if(self.inhabitation == InhabitationTypes.Thorp):
             inhabitation = "Маленькая деревушка"
+            people_count = "20 - 80"
         if(self.inhabitation == InhabitationTypes.Hamlet):
             inhabitation = "Деревня"
+            people_count = "100 - 400"
         if(self.inhabitation == InhabitationTypes.Village):
             inhabitation = "Село"
+            people_count = "600 - 900"
         if(self.inhabitation == InhabitationTypes.Town):
             inhabitation = "Небольшой город"
+            people_count = "1,500 - 6,500"
         if(self.inhabitation == InhabitationTypes.City):
             inhabitation = "Город"
+            people_count = "10,000 - 60,000"
         if(self.inhabitation == InhabitationTypes.Castle):
             inhabitation = "Замок"
         if(self.inhabitation == InhabitationTypes.RuinsVillage):
@@ -81,4 +89,4 @@ class Hex:
         if(self.inhabitation == InhabitationTypes.RuinsTomb):
             inhabitation = "Руины гробницы"
 
-        return result.format(place, examples, inhabitation)
+        return result.format(place, examples, inhabitation, people_count)
